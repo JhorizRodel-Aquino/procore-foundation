@@ -82,17 +82,14 @@ function Home() {
             </dl>
           </div>
 
-          {/* right: scanning viewport */}
+          {/* right: hero image */}
           <div className="relative md:col-span-5">
             <div className="relative">
               <div className="mb-3 flex items-center justify-between">
-                <span className="mono-label text-accent">SCAN · LIVE</span>
-                <span className="mono-label flex items-center gap-2">
-                  <span className="h-2 w-2 animate-blink rounded-full bg-accent shadow-[0_0_8px_var(--accent)]" />
-                  ACTIVE
-                </span>
+                <span className="mono-label text-accent">PC · FIELD</span>
+                <span className="mono-label opacity-60">Metro Manila</span>
               </div>
-              <div className="corner-frame relative aspect-[4/5] w-full overflow-hidden border border-line/60 ring-scan">
+              <div className="relative aspect-[4/5] w-full overflow-hidden border border-line/60 ring-scan">
                 <img
                   src={hero}
                   alt="Concrete coring rig operating on-site at night"
@@ -100,50 +97,15 @@ function Home() {
                   width={1600}
                   height={1200}
                 />
-                <div className="absolute inset-0 grid-bg-sm opacity-30 mix-blend-screen" aria-hidden />
-                <div className="animate-scan-sweep absolute inset-0" aria-hidden />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-3 text-[10px] font-mono uppercase tracking-widest text-accent-2">
-                  <span>SPEC · CORE-Ø 100MM</span>
-                  <span>DEPTH · 240MM</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" aria-hidden />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-4 text-[10px] font-mono uppercase tracking-widest text-accent">
+                  <span>CORE Ø 100MM</span>
+                  <span>DEPTH 240MM</span>
                 </div>
               </div>
-              <div className="mt-3 flex items-center justify-between">
-                <span className="mono-label opacity-70">FERRO · CLEAR</span>
-                <span className="mono-label opacity-70">Ø 100 · WET</span>
-              </div>
             </div>
           </div>
         </div>
-
-        {/* ticker */}
-        <div className="relative border-y border-line/50 bg-surface/60">
-          <div className="flex gap-10 overflow-hidden whitespace-nowrap py-3 mono-label text-accent">
-            <div className="flex shrink-0 animate-[marquee_40s_linear_infinite] gap-10 px-6">
-              {[
-                "CONCRETE CORING",
-                "REBAR / FERRO SCANNING",
-                "REBOUND HAMMER TEST",
-                "COMPRESSIVE STRENGTH",
-                "AS-BUILT DOCUMENTATION",
-                "STRUCTURAL CERTIFICATION",
-                "SIGNED & SEALED",
-              ]
-                .concat([
-                  "CONCRETE CORING",
-                  "REBAR / FERRO SCANNING",
-                  "REBOUND HAMMER TEST",
-                  "COMPRESSIVE STRENGTH",
-                ])
-                .map((t, i) => (
-                  <span key={i} className="flex items-center gap-10">
-                    <span>{t}</span>
-                    <span className="opacity-40">◆</span>
-                  </span>
-                ))}
-            </div>
-          </div>
-        </div>
-        <style>{`@keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-50%);} }`}</style>
       </section>
 
       {/* ============ SERVICES ============ */}

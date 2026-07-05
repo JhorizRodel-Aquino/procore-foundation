@@ -68,7 +68,6 @@ function Gallery() {
                   </span>
                 </div>
                 <figcaption className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-3">
-                  <span className="h-1.5 w-1.5 animate-blink bg-accent shadow-[0_0_8px_var(--accent)]" />
                   <span className="text-sm text-foreground/90">{s.caption}</span>
                 </figcaption>
               </figure>

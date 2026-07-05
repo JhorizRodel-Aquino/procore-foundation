@@ -16,6 +16,7 @@
 @theme inline {
   --font-display: "Archivo Black", "Impact", sans-serif;
   --font-sans: "Hind", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", "Georgia", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --color-background: var(--background);

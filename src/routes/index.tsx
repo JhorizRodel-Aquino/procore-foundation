@@ -40,7 +40,7 @@ function Home() {
               <span className="mono-label">Metro Manila / 14°35′N 121°00′E</span>
             </div>
 
-            <h1 className="mt-8 font-display text-[13vw] leading-[0.9] uppercase tracking-tight md:text-[6.4rem] lg:text-[7.5rem]">
+            <h1 className="mt-8 font-display text-5xl leading-[0.92] uppercase tracking-tight sm:text-6xl md:text-[5.2rem] lg:text-[6.2rem]">
               Structural
               <br />
               <span className="text-accent">Certainty</span>

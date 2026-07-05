@@ -59,10 +59,10 @@ function ServiceDetail() {
           <div className="mono-label mb-4 text-accent">
             {s.code} · {s.standard}
           </div>
-          <h1 className="font-display text-5xl uppercase leading-[0.9] tracking-tight md:text-8xl">
+          <h1 className="font-display text-5xl uppercase leading-[0.9] tracking-tight text-white md:text-8xl">
             {s.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{s.tagline}</p>
+          <p className="mt-6 max-w-2xl text-lg text-white/80">{s.tagline}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -75,7 +75,7 @@ function ServiceDetail() {
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 border border-line px-5 py-3 font-semibold hover:border-accent/60"
+              className="inline-flex items-center gap-2 border border-white/40 px-5 py-3 font-semibold text-white hover:border-accent/60 hover:text-accent"
             >
               ← All services
             </Link>

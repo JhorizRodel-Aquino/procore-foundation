@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { services, getService } from "@/data/services";
+import { services, getService, type Service } from "@/data/services";
 import { SectionLabel } from "@/components/Section";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -43,7 +43,7 @@ function ServiceNotFound() {
 }
 
 function ServiceDetail() {
-  const s = Route.useLoaderData();
+  const s = Route.useLoaderData() as Service;
   const otherServices = services.filter((x) => x.slug !== s.slug);
 
   return (

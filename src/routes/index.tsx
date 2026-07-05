@@ -83,7 +83,7 @@ function Home() {
                   width={1600}
                   height={2000}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" aria-hidden />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" aria-hidden />
                 <div className="pointer-events-none absolute inset-3 border border-white/20" aria-hidden />
                 <figcaption className="absolute left-5 top-5 mono-label text-white/90">
                   PLATE 01 · FIELD OPERATIONS
@@ -185,7 +185,7 @@ function Home() {
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                     <div className="absolute left-4 top-4 mono-label text-white/85">
                       {String(i + 1).padStart(2, "0")} // {s.code}
                     </div>
@@ -334,7 +334,7 @@ function Home() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <figcaption className="absolute left-4 top-4 mono-label text-white/90">
                   PLATE {String(i + 3).padStart(2, "0")}
                 </figcaption>

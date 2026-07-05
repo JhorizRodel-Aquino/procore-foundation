@@ -47,11 +47,11 @@ function ServicesIndex() {
                     src={s.image}
                     alt={s.title}
                     loading="lazy"
-                    className="h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-90"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     width={1200}
                     height={900}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                   <div className="absolute inset-x-0 top-0 flex items-center justify-between p-3">
                     <span className="mono-label text-accent">{s.code}</span>
                     <span className="mono-label opacity-70">0{i + 1} / 04</span>

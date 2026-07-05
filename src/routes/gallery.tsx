@@ -58,9 +58,9 @@ function Gallery() {
                   src={s.src}
                   alt={s.caption}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
                 <div className="absolute inset-x-0 top-0 flex items-center justify-between p-3">
                   <span className="mono-label text-accent">{s.code}</span>
                   <span className="mono-label opacity-70">

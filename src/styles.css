@@ -86,92 +86,27 @@
 
 /* ---------- Scanner aesthetic utilities ---------- */
 
-@utility scanline-bg {
-  background-image:
-    linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), color-mix(in oklab, var(--accent) 20%, transparent) 100%);
-  background-size: 100% 4px;
-}
+@utility scanline-bg { background: transparent; }
 
-@utility grid-bg {
-  background-image:
-    linear-gradient(color-mix(in oklab, var(--accent) 8%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--accent) 8%, transparent) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-@utility grid-bg-sm {
-  background-image:
-    linear-gradient(color-mix(in oklab, var(--accent) 6%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--accent) 6%, transparent) 1px, transparent 1px);
-  background-size: 16px 16px;
-}
+@utility grid-bg { background: transparent; }
+@utility grid-bg-sm { background: transparent; }
 
 @utility corner-frame {
   position: relative;
-  &::before, &::after {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border-color: var(--accent);
-  }
-  &::before {
-    top: 0; left: 0;
-    border-top: 1.5px solid; border-left: 1.5px solid;
-  }
-  &::after {
-    bottom: 0; right: 0;
-    border-bottom: 1.5px solid; border-right: 1.5px solid;
-  }
 }
 
 @utility text-scan {
   color: var(--accent);
-  text-shadow: 0 0 12px color-mix(in oklab, var(--accent) 60%, transparent);
 }
 
 @utility ring-scan {
-  box-shadow:
-    inset 0 0 0 1px color-mix(in oklab, var(--accent) 40%, transparent),
-    0 0 40px -8px color-mix(in oklab, var(--accent) 40%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent) 18%, transparent);
 }
 
-@keyframes scan-sweep {
-  0%   { transform: translateY(-100%); opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { transform: translateY(100%); opacity: 0; }
-}
-.animate-scan-sweep::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg,
-    transparent 0%,
-    color-mix(in oklab, var(--accent-2) 25%, transparent) 45%,
-    color-mix(in oklab, var(--accent) 60%, transparent) 50%,
-    color-mix(in oklab, var(--accent-2) 25%, transparent) 55%,
-    transparent 100%);
-  pointer-events: none;
-  animation: scan-sweep 4.5s cubic-bezier(.4,0,.2,1) infinite;
-  mix-blend-mode: screen;
-}
-
-@keyframes radar-pulse {
-  0% { transform: scale(0.6); opacity: 0.9; }
-  100% { transform: scale(2.2); opacity: 0; }
-}
+.animate-scan-sweep::after { content: none; }
 .animate-radar::before,
-.animate-radar::after {
-  content: "";
-  position: absolute; inset: 0;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in oklab, var(--accent) 60%, transparent);
-  animation: radar-pulse 3s ease-out infinite;
-}
-.animate-radar::after { animation-delay: 1.5s; }
-
-@keyframes blink { 50% { opacity: 0.2; } }
-.animate-blink { animation: blink 1.4s steps(2, end) infinite; }
+.animate-radar::after { content: none; }
+.animate-blink { animation: none; }
 
 @utility mono-label {
   font-family: var(--font-mono);

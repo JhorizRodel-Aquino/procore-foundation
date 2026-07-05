@@ -1,7 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
-  Link,
   createRootRouteWithContext,
   useRouter,
   HeadContent,
@@ -11,24 +10,24 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <div className="mono-label mb-3 text-accent">SIGNAL LOST · 404</div>
+        <h1 className="font-display text-7xl uppercase tracking-tight text-foreground">Not found</h1>
+        <p className="mt-4 text-sm text-muted-foreground">
+          Nothing detected at this coordinate. The page may have moved or never existed.
         </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+        <a
+          href="/"
+          className="mt-6 inline-flex items-center gap-2 border border-accent bg-accent/10 px-4 py-2 text-sm font-semibold text-accent hover:bg-accent hover:text-background"
+        >
+          <span className="mono-label">RETURN</span>
+          <span>Home</span>
+        </a>
       </div>
     </div>
   );
@@ -44,11 +43,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <div className="mono-label mb-3 text-danger">SYSTEM FAULT</div>
+        <h1 className="font-display text-3xl uppercase tracking-tight">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Something went wrong on our end. Try again or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -56,14 +54,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="border border-accent bg-accent/10 px-4 py-2 text-sm font-semibold text-accent hover:bg-accent hover:text-background"
           >
             Try again
           </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
+          <a href="/" className="border border-line px-4 py-2 text-sm font-semibold hover:bg-surface">
             Go home
           </a>
         </div>
@@ -77,21 +72,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { name: "theme-color", content: "#0d1a1c" },
+      { title: "PROCORE Engineering+ | Concrete Coring & Material Testing PH" },
+      {
+        name: "description",
+        content:
+          "PROCORE Engineering+ by Centris — concrete coring, rebar/ferro scanning, rebound hammer, and compressive strength testing. Signed and sealed by licensed structural engineers.",
+      },
+      { name: "keywords", content: "concrete coring, rebar scanning, ferro scanning, rebound hammer test, compressive strength test, material testing Philippines, as-built, structural engineer, Centris, PROCORE" },
+      { name: "author", content: "PROCORE Engineering+ by Centris" },
+      { property: "og:site_name", content: "PROCORE Engineering+" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "PROCORE Engineering+ | Concrete Coring & Material Testing" },
+      { property: "og:description", content: "Non-destructive testing, precision coring, and certified structural results — signed and sealed." },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "PROCORE Engineering+" },
+      { name: "twitter:description", content: "Concrete coring, ferro scanning, rebound hammer, and compressive strength testing." },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "PROCORE Engineering+ by Centris",
+          description:
+            "Concrete coring, rebar/ferro scanning, rebound hammer test, and compressive strength testing services.",
+          telephone: "+63-917-155-7091",
+          email: "procore@centris-ph.com",
+          areaServed: "PH",
+          serviceType: [
+            "Concrete Coring",
+            "Rebar / Ferro Scanning",
+            "Rebound Hammer Test",
+            "Concrete Compressive Strength Test",
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +140,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <SiteHeader />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
     </QueryClientProvider>
   );
 }

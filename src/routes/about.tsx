@@ -19,14 +19,16 @@ function About() {
   return (
     <>
       <section className="relative border-b border-line/60 py-16 md:py-24">
-        <div className="absolute inset-0 grid-bg opacity-30" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 md:px-8">
-          <SectionLabel code="PC · 05">About</SectionLabel>
-          <SectionHeading title={<>Engineering-grade certainty. <br /><span className="text-scan">By Centris.</span></>}>
+          <div className="mono-label text-accent">[ § 05 ] About</div>
+          <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight md:text-7xl">
+            Engineering-grade certainty. <br /><span className="text-accent">By Centris.</span>
+          </h1>
+          <p className="mt-6 max-w-2xl font-serif text-xl italic leading-relaxed text-foreground/80 md:text-2xl">
             PROCORE Engineering+ is the structural diagnostics and material
             testing arm of Centris — built for contractors, developers, and
             engineers who need results that hold up under a stamp.
-          </SectionHeading>
+          </p>
         </div>
       </section>
 

@@ -20,13 +20,15 @@ function ServicesIndex() {
   return (
     <>
       <section className="relative border-b border-line/60 py-16 md:py-24">
-        <div className="absolute inset-0 grid-bg opacity-30" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-4 md:px-8">
-          <SectionLabel code="PC · 02">Capabilities</SectionLabel>
-          <SectionHeading title={<>Certified testing,<br /><span className="text-scan">end-to-end.</span></>}>
+          <div className="mono-label text-accent">[ § 02 ] Capabilities</div>
+          <h1 className="mt-6 font-display text-4xl uppercase leading-[0.95] tracking-tight md:text-7xl">
+            Certified testing,<br /><span className="text-accent">end-to-end.</span>
+          </h1>
+          <p className="mt-6 max-w-2xl font-serif text-xl italic leading-relaxed text-foreground/80 md:text-2xl">
             Non-destructive investigation, precision coring, and lab-verified
             strength — all delivered with structural certification.
-          </SectionHeading>
+          </p>
         </div>
       </section>
 

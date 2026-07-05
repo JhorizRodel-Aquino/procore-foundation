@@ -51,9 +51,8 @@ function ServiceDetail() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-line/60">
         <div className="absolute inset-0" aria-hidden>
-          <img src={s.image} alt="" className="h-full w-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
-          <div className="absolute inset-0 grid-bg opacity-30" />
+          <img src={s.image} alt="" className="h-full w-full object-cover opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/85 to-background" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-24">

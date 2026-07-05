@@ -91,7 +91,7 @@ export function SiteFooter() {
             </p>
             <div className="mt-4 flex items-center gap-2">
               <span className="mono-label">STATUS</span>
-              <span className="inline-flex h-2 w-2 animate-blink rounded-full bg-accent shadow-[0_0_10px_var(--accent)]" />
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
               <span className="text-xs text-muted-foreground">Accepting projects</span>
             </div>
           </div>

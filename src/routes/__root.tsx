@@ -68,7 +68,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#0d1a1c" },
+      { name: "theme-color", content: "#fcfdfd" },
       { title: "PROCORE Engineering+ | Concrete Coring & Material Testing PH" },
       {
         name: "description",

@@ -51,19 +51,19 @@
 }
 
 :root {
-  --background: oklch(0.13 0.005 220);      /* near-black, slight cool tint */
-  --foreground: oklch(0.97 0.005 220);
-  --surface: oklch(0.17 0.006 220);
-  --surface-2: oklch(0.20 0.008 220);
-  --line: oklch(0.26 0.008 220);
-  --line-strong: oklch(0.38 0.012 220);
-  --muted: oklch(0.20 0.006 220);
-  --muted-foreground: oklch(0.68 0.012 220);
-  --primary: oklch(0.62 0.10 195);          /* #158e8d */
-  --primary-foreground: oklch(0.10 0.01 200);
-  --accent: oklch(0.78 0.13 195);           /* teal */
-  --accent-2: oklch(0.90 0.14 195);
-  --danger: oklch(0.68 0.20 25);
+  --background: oklch(0.93 0.004 240);      /* concrete gray */
+  --foreground: oklch(0.20 0.006 240);
+  --surface: oklch(0.90 0.005 240);
+  --surface-2: oklch(0.86 0.006 240);
+  --line: oklch(0.78 0.008 240);
+  --line-strong: oklch(0.66 0.010 240);
+  --muted: oklch(0.87 0.005 240);
+  --muted-foreground: oklch(0.40 0.010 240);
+  --primary: oklch(0.50 0.10 195);          /* #158e8d */
+  --primary-foreground: oklch(0.98 0.005 220);
+  --accent: oklch(0.48 0.11 195);           /* teal */
+  --accent-2: oklch(0.40 0.11 195);
+  --danger: oklch(0.55 0.20 25);
 }
 
 @layer base {
@@ -80,7 +80,7 @@
     background: var(--background);
     min-height: 100vh;
   }
-  ::selection { background: color-mix(in oklab, var(--accent) 60%, transparent); color: #001010; }
+  ::selection { background: color-mix(in oklab, var(--accent) 60%, transparent); color: #ffffff; }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
 }
 

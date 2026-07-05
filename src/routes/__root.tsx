@@ -81,9 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:title", content: "PROCORE Engineering+ | Concrete Coring & Material Testing" },
       { property: "og:description", content: "Non-destructive testing, precision coring, and certified structural results — signed and sealed." },
+      { property: "og:image", content: "/procore-logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "PROCORE Engineering+" },
       { name: "twitter:description", content: "Concrete coring, ferro scanning, rebound hammer, and compressive strength testing." },
+      { name: "twitter:image", content: "/procore-logo.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

@@ -49,10 +49,7 @@ function Contact() {
             <div className="corner-frame relative border border-line/60 bg-surface/40 p-6 md:p-8">
               <div className="mb-6 flex items-center justify-between">
                 <div className="mono-label text-accent">CHANNEL · REQUEST FORM</div>
-                <div className="mono-label flex items-center gap-2">
-                  <span className="h-2 w-2 animate-blink rounded-full bg-accent shadow-[0_0_8px_var(--accent)]" />
-                  READY
-                </div>
+                <div className="mono-label opacity-70">READY</div>
               </div>
 
               {status === "sent" ? (
